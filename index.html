@@ -445,21 +445,20 @@
   </div>
 </section>
 
-<section class="cta-band" id="contact">
-    </section>
-
 <section class="client-registration" id="register">
   <div class="wrap">
     <div class="eyebrow">Client Registration</div>
     <h2>Register Your Legal Matter</h2>
 
-    <form class="registration-form">
+    <form name="client-registration" method="POST" data-netlify="true">
+
+      <input type="hidden" name="form-name" value="client-registration">
 
       <input type="text" name="fullname" placeholder="Full Name" required>
 
       <input type="tel" name="phone" placeholder="Phone Number" required>
 
-      <input type="email" name="email" placeholder="Email Address">
+      <input type="email" name="email" placeholder="Email Address" required>
 
       <input type="text" name="cnic" placeholder="CNIC Number">
 
@@ -478,7 +477,7 @@
 
       <input type="text" name="case_title" placeholder="Case Name / Matter Title">
 
-      <textarea name="details" rows="5" placeholder="Describe your matter briefly"></textarea>
+      <textarea name="details" rows="5" placeholder="Describe your legal matter"></textarea>
 
       <button type="submit" class="btn-primary">
         Submit Registration
