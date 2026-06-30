@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Asadullah Javed — Advocates &amp; Legal Consultants</title>
+<link rel="canonical" href="https://www.asadullahjavedlaw.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Spectral+SC:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#101a17;
+    --paper:#eee9df;
+    --brass:#a8843f;
+    --brass-bright:#c9a052;
+    --green-deep:#16302a;
+    --green-mid:#22433a;
+    --line: rgba(238,233,223,0.16);
+    --muted: rgba(238,233,223,0.62);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--brass); color:var(--ink);}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-0.01em;}
+
+  .eyebrow{
+    font-family:'Spectral SC', serif;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--brass-bright);
+  }
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(16,26,23,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 32px; max-width:1180px; margin:0 auto;
+  }
+  .brand{
+    font-family:'Fraunces', serif; font-size:20px; font-weight:600;
+    display:flex; align-items:center; gap:10px;
+  }
+  .brand .mark{
+    width:30px; height:30px; flex-shrink:0;
+  }
+  .navlinks{display:flex; gap:36px; font-size:14px; color:var(--muted);}
+  .navlinks a:hover{color:var(--paper);}
+  .nav-cta{
+    border:1px solid var(--brass);
+    color:var(--brass-bright);
+    padding:9px 18px;
+    font-size:13px;
+    letter-spacing:0.02em;
+    transition:all .25s ease;
+  }
+  .nav-cta:hover{background:var(--brass); color:var(--ink);}
+  .navlinks-mobile{display:none;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:120px 0 80px;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(ellipse 900px 500px at 85% -10%, rgba(34,67,58,0.9), transparent 60%),
+      linear-gradient(180deg, var(--ink), #0c1513 100%);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center;
+  }
+  .hero .eyebrow{margin-bottom:22px; display:flex; align-items:center; gap:10px;}
+  .hero .eyebrow::before{content:""; width:28px; height:1px; background:var(--brass);}
+  .hero h1{
+    font-size:clamp(38px, 5vw, 60px);
+    line-height:1.06;
+    margin-bottom:24px;
+  }
+  .hero h1 em{font-style:italic; color:var(--brass-bright);}
+  .hero p.lede{
+    font-size:17px; color:var(--muted); max-width:480px; margin-bottom:36px;
+  }
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--brass-bright); color:var(--ink); font-weight:600;
+    padding:14px 26px; font-size:14px; letter-spacing:0.01em;
+    transition:transform .2s ease, background .2s ease;
+    display:inline-block;
+  }
+  .btn-primary:hover{background:#dab266; transform:translateY(-1px);}
+  .btn-ghost{
+    border:1px solid var(--line); padding:14px 26px; font-size:14px; color:var(--paper);
+    transition:border-color .2s ease;
+  }
+  .btn-ghost:hover{border-color:var(--brass);}
+
+  .seal{
+    position:relative; width:100%; aspect-ratio:1/1; max-width:380px; margin-left:auto;
+    border:1px solid var(--line); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .seal::before{
+    content:""; position:absolute; inset:18px; border:1px solid rgba(168,132,63,0.4); border-radius:50%;
+  }
+  .seal svg{width:58%; height:58%;}
+  .seal .ring-text{
+    position:absolute; inset:0; animation:spin 38s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  @media (prefers-reduced-motion:reduce){ .ring-text{animation:none;} }
+
+  .stat-strip{
+    border-top:1px solid var(--line);
+    margin-top:80px; padding-top:40px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:24px;
+  }
+  .stat-strip .num{font-family:'Fraunces',serif; font-size:34px; color:var(--brass-bright);}
+  .stat-strip .lbl{font-size:13px; color:var(--muted); margin-top:6px;}
+
+  /* SECTION generic */
+  section{padding:100px 0;}
+  .section-head{max-width:600px; margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px); margin-top:14px;}
+  .section-head p{color:var(--muted); margin-top:16px; font-size:15.5px;}
+
+  /* PRACTICE AREAS */
+  .practice{border-bottom:1px solid var(--line); background:#0d1916;}
+  .practice-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .pcard{
+    background:#0d1916; padding:38px 32px; min-height:230px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    transition:background .25s ease;
+  }
+  .pcard:hover{background:var(--green-deep);}
+  .pcard .tag{font-size:12px; color:var(--brass-bright); letter-spacing:0.1em; text-transform:uppercase; font-family:'Spectral SC',serif;}
+  .pcard h3{font-size:22px; margin-top:14px;}
+  .pcard p{font-size:14px; color:var(--muted); margin-top:12px;}
+  .pcard svg{width:30px; height:30px; opacity:0.8;}
+
+  /* APPROACH / WHY */
+  .approach .wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px;}
+  .approach-list{display:flex; flex-direction:column;}
+  .approach-item{
+    padding:26px 0; border-top:1px solid var(--line);
+    display:grid; grid-template-columns:90px 1fr; gap:20px;
+  }
+  .approach-item:last-child{border-bottom:1px solid var(--line);}
+  .approach-item .yr{font-family:'Fraunces',serif; color:var(--brass-bright); font-size:15px;}
+  .approach-item h4{font-size:17px; margin-bottom:6px; font-weight:600; font-family:'Inter',sans-serif;}
+  .approach-item p{font-size:14px; color:var(--muted);}
+
+  .quote-block{
+    background:var(--green-deep); border:1px solid var(--line);
+    padding:48px; display:flex; flex-direction:column; justify-content:center;
+  }
+  .quote-block blockquote{
+    font-family:'Fraunces',serif; font-style:italic; font-size:23px; line-height:1.45;
+  }
+  .quote-block cite{display:block; margin-top:22px; font-size:13px; color:var(--muted); font-style:normal;}
+
+  /* PROCESS */
+  .process{background:#0d1916; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .process-row{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    position:relative;
+  }
+  .process-row::before{
+    content:""; position:absolute; top:13px; left:0; right:0; height:1px; background:var(--line);
+  }
+  .pstep{padding-right:24px; position:relative;}
+  .pstep .dot{
+    width:26px; height:26px; border-radius:50%; border:1px solid var(--brass);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif; font-size:12px; color:var(--brass-bright);
+    background:#0d1916; position:relative; z-index:2; margin-bottom:22px;
+  }
+  .pstep h4{font-size:16px; margin-bottom:8px;}
+  .pstep p{font-size:13.5px; color:var(--muted);}
+
+  /* TEAM/CONTACT CTA */
+  .cta-band{
+    background:linear-gradient(120deg, var(--green-deep), #0d1916);
+    border-bottom:1px solid var(--line);
+    text-align:center; padding:110px 0;
+  }
+  .cta-band .eyebrow{justify-content:center; display:flex;}
+  .cta-band h2{font-size:clamp(30px,4vw,46px); max-width:680px; margin:18px auto 30px;}
+  .cta-band .btn-primary{margin:0 auto;}
+
+  footer{padding:60px 0 40px;}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px;}
+  .foot-grid h5{font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:16px; font-family:'Inter',sans-serif; font-weight:600;}
+  .foot-grid p, .foot-grid a{font-size:14px; color:var(--muted); display:block; margin-bottom:10px;}
+  .foot-grid a:hover{color:var(--brass-bright);}
+  .foot-brand{font-family:'Fraunces',serif; font-size:20px; margin-bottom:14px;}
+  .foot-bottom{
+    border-top:1px solid var(--line); margin-top:50px; padding-top:24px;
+    display:flex; justify-content:space-between; font-size:12.5px; color:var(--muted); flex-wrap:wrap; gap:10px;
+  }
+
+  a:focus-visible, button:focus-visible{outline:2px solid var(--brass-bright); outline-offset:3px;}
+
+  @media (max-width:880px){
+    .client-registration{
+  padding:100px 0;
+  background:#0d1916;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.client-registration h2{
+  margin:15px 0 30px;
+  font-family:'Fraunces', serif;
+}
+
+.registration-form{
+  max-width:700px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.registration-form input,
+.registration-form select,
+.registration-form textarea{
+  width:100%;
+  padding:14px;
+  background:#13211d;
+  border:1px solid var(--line);
+  color:var(--paper);
+  border-radius:4px;
+  font-size:15px;
+}
+
+.registration-form button{
+  width:fit-content;
+  cursor:pointer;
+}
+    .navlinks{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .seal{margin:0 auto; max-width:260px;}
+    .stat-strip{grid-template-columns:repeat(2,1fr); row-gap:30px;}
+    .practice-grid{grid-template-columns:1fr;}
+    .approach .wrap{grid-template-columns:1fr;}
+    .process-row{grid-template-columns:1fr; row-gap:34px;}
+    .process-row::before{display:none;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" stroke="#a8843f" stroke-width="1"/>
+        <path d="M20 9v22M12 14l8-4 8 4M9 16l3 7-3 1a4 4 0 008 0l-3-1 3-7M23 16l3 7-3 1a4 4 0 008 0l-3-1 3-7" stroke="#c9a052" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Muhammad Asadullah Javed
+    </div>
+    <div class="navlinks">
+      <a href="#practice">Practice Areas</a>
+      <a href="#approach">Our Approach</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Book a Consultation</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Advocates High Court &amp; Supreme Court of Pakistan</div>
+        <h1>Counsel built on <em>precedent</em>,<br>argued with conviction.</h1>
+        <p class="lede">Muhammad Asadullah Javed represents individuals, families and businesses across Pakistan in civil, criminal, family, corporate and tax matters — from the trial court to the apex court.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Book a Consultation</a>
+          <a href="#practice" class="btn-ghost">View Practice Areas</a>
+        </div>
+      </div>
+      <div class="seal">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 18v64M30 28l20-10 20 10M22 34l8 18-8 2a10 10 0 0020 0l-8-2 8-18M58 34l8 18-8 2a10 10 0 0020 0l-8-2 8-18M38 82h24" stroke="#c9a052" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="practice" id="practice">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Handle</div>
+      <h2>Practice areas</h2>
+      <p>Each matter is assigned counsel with direct experience in that forum — not a generalist passed between departments.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="practice-grid">
+      <div class="pcard">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a052" stroke-width="1.3"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
+          <div class="tag">Property</div>
+          <h3>Civil &amp; Property</h3>
+        </div>
+        <p>Title disputes, possession suits, tenancy matters, and property documentation across Punjab's revenue and civil courts.</p>
+      </div>
+      <div class="pcard">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a052" stroke-width="1.3"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg>
+          <div class="tag">Defence</div>
+          <h3>Criminal</h3>
+        </div>
+        <p>Bail applications, trial defence, and appeals before sessions and high courts, handled with discretion and urgency.</p>
+      </div>
+      <div class="pcard">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a052" stroke-width="1.3"><path d="M20 21a8 8 0 10-16 0M12 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
+          <div class="tag">Family Court</div>
+          <h3>Family &amp; Divorce</h3>
+        </div>
+        <p>Khula, dissolution of marriage, custody, maintenance and guardianship matters, approached with sensitivity.</p>
+      </div>
+      <div class="pcard">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a052" stroke-width="1.3"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7M12 11v10"/></svg>
+          <div class="tag">Enterprise</div>
+          <h3>Corporate &amp; Business</h3>
+        </div>
+        <p>Company incorporation, contracts, shareholder disputes, and commercial litigation for SECP-registered entities.</p>
+      </div>
+      <div class="pcard">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a052" stroke-width="1.3"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h4"/></svg>
+          <div class="tag">Revenue</div>
+          <h3>Tax</h3>
+        </div>
+        <p>FBR notices, income tax appeals, sales tax disputes, and representation before the Appellate Tribunal.</p>
+      </div>
+      <div class="pcard">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a052" stroke-width="1.3"><path d="M9 11l3 3L22 4M2 12a10 10 0 1018 6"/></svg>
+          <div class="tag">By Appointment</div>
+          <h3>General Consultation</h3>
+        </div>
+        <p>Not sure which forum applies? Bring us the facts — we'll map out the legal path forward in a first consultation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="approach" id="approach">
+  <div class="wrap">
+    <div>
+      <div class="section-head" style="margin-bottom:36px;">
+        <div class="eyebrow">Our Approach</div>
+        <h2>How we take on a case</h2>
+      </div>
+      <div class="approach-list">
+        <div class="approach-item">
+          <div class="yr">First</div>
+          <div>
+            <h4>Listen without billing the clock</h4>
+            <p>The first consultation is about understanding your matter fully, not rushing to paperwork.</p>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="yr">Then</div>
+          <div>
+            <h4>Plain-language case strategy</h4>
+            <p>You'll know what forum your case goes to, what it may cost, and what timeline to expect — before we proceed.</p>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="yr">Always</div>
+          <div>
+            <h4>Direct access to your advocate</h4>
+            <p>You speak with the lawyer handling your file, not a rotating front desk.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="quote-block">
+      <blockquote>"A client should never have to guess what is happening with their own case. Clarity is part of the representation, not an afterthought."</blockquote>
+      <cite>— Muhammad Asadullah Javed, Advocate</cite>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Getting Started</div>
+      <h2>What happens after you reach out</h2>
+    </div>
+    <div class="process-row">
+      <div class="pstep">
+        <div class="dot">1</div>
+        <h4>Initial enquiry</h4>
+        <p>Call, WhatsApp, or send your case details through the contact form below.</p>
+      </div>
+      <div class="pstep">
+        <div class="dot">2</div>
+        <h4>Consultation</h4>
+        <p>A confidential meeting at our chambers, or by phone for matters outside Lahore.</p>
+      </div>
+      <div class="pstep">
+        <div class="dot">3</div>
+        <h4>Engagement</h4>
+        <p>We confirm scope, forum, and fee structure in writing before any filing begins.</p>
+      </div>
+      <div class="pstep">
+        <div class="dot">4</div>
+        <h4>Representation</h4>
+        <p>Your advocate appears, files, and updates you at every stage of the proceeding.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+    </section>
+
+<section class="client-registration" id="register">
+  <div class="wrap">
+    <div class="eyebrow">Client Registration</div>
+    <h2>Register Your Legal Matter</h2>
+
+    <form class="registration-form">
+
+      <input type="text" name="fullname" placeholder="Full Name" required>
+
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+
+      <input type="email" name="email" placeholder="Email Address">
+
+      <input type="text" name="cnic" placeholder="CNIC Number">
+
+      <select name="case_type" required>
+        <option value="">Select Case Type</option>
+        <option>Income Tax</option>
+        <option>Sales Tax</option>
+        <option>SECP Matter</option>
+        <option>Company Registration</option>
+        <option>Civil Case</option>
+        <option>Criminal Case</option>
+        <option>Family Case</option>
+        <option>Tort Claim</option>
+        <option>Other</option>
+      </select>
+
+      <input type="text" name="case_title" placeholder="Case Name / Matter Title">
+
+      <textarea name="details" rows="5" placeholder="Describe your matter briefly"></textarea>
+
+      <button type="submit" class="btn-primary">
+        Submit Registration
+      </button>
+
+    </form>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get In Touch</div>
+    <h2>Discuss your matter in confidence with an advocate.</h2>
+    <a href="tel:+923702192254" class="btn-primary">Call 0370 2192254</a>
+    <a href="asadullahjaved3555@gmil.com" class="btn-primary"> Email: asadullahjaved3555@gmil.com</a>
+    <a href="asadullahjavedlaw.netlify.app" class="btn-primary"> Website: asadullahjavedlaw.netlify.app</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Muhammad Asadullah Javed</div>
+        <p style="max-width:260px;">Advocates High Court &amp; Supreme Court of Pakistan, practising from Lahore.</p>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="tel:+923702192254">0370 2192254</a>
+        <a href="mailto:asadullahjaved3555@gmil.com">asadullahjaved3555@gmil.com</a>
+        <a href="https://asadullahjavedlaw.netlify.app">asadullahjavedlaw.netlify.app</a>
+      </div>
+      <div>
+        <h5>Hours</h5>
+        <p>Mon – Sat<br>08:00 AM – 7:00 PM</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Muhammad Asadullah Javed. All rights reserved.</span>
+      <span>Advocate High Court &amp; Supreme Court of Pakistan.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
